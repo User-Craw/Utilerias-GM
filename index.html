@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina de descargas</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            margin: 0;
+            min-height: 100%;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background: #EEFFFA;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .frame {
+            width: min(96vw, 1200px);
+            min-height: calc(100vh - 40px);
+            background: radial-gradient(circle at center, #04BA78 0%, #124A49 70%);
+            border: 4px solid transparent;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05);
+        }
+
+        h1 {
+            margin: 0;
+            text-align: center;
+            color: #F8FFDE;
+            font-size: clamp(2rem, 4vw, 3rem);
+        }
+    </style>
+</head>
+<body>
+    <div class="frame">
+        <h1>Descarga de utilerias</h1>
+    </div>
+</body>
+</html>
