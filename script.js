@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const downloadLink = document.querySelector('.download-link');
+    const link = document.querySelector('.download-link');
 
-    if (!downloadLink) return;
+    if (!link) return;
 
-    downloadLink.addEventListener('click', (event) => {
+    link.addEventListener('click', (event) => {
         event.preventDefault();
 
         const password = prompt('Ingrese la contraseña para descargar este archivo:');
@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         if (password === correctPassword) {
-            window.location.href = downloadLink.dataset.url;
+            window.location.href = link.dataset.url;
         } else {
             alert('Contraseña incorrecta');
         }
