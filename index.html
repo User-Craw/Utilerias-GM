@@ -9,27 +9,62 @@
 <body>
     <div class="frame">
         <img class="header-logo" src="https://ganamas.net/wp-content/uploads/2025/11/logotipo-con-tagline-horizontal-3.png" alt="Logo Ganamas">
-        <h1>Descarga de utilerias</h1>
+        <h1>Descarga de Software</h1>
 
         <div class="table-wrapper">
             <table class="download-table">
                 <tr>
-                    <th>Programa</th>                    
-                    <th>Link de descarga</th>
+                    <th colspan="2">Herramientas de Acceso Remoto para Clientes GanaMás</th>
                 </tr>
                 <tr>
+                    <td class="program-cell">
+                        <div class="program-name-wrap">
+                            <img src="https://cdn.jsdelivr.net/gh/selfhst/icons/png/rustdesk.png" alt="RustDesk" class="program-icon">
+                            <span class="program-name">RustDesk</span>
+                        </div>
+                    </td>
+                    <td><a href="https://github.com/User-Craw/Utilerias-GM/releases/download/v1.0.0/RustDesk.exe" class="download-confirmation">Descargar</a></td>
+                </tr>
+                <tr>
+                    <td class="program-cell">
+                        <div class="program-name-wrap">
+                            <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/anydesk.png" alt="AnyDesk" class="program-icon anydesk-icon">
+                            <span class="program-name">AnyDesk</span>
+                        </div>
+                    </td>
+                    <td><a href="https://github.com/User-Craw/Utilerias-GM/releases/download/v1.0.0/AnyDesk.exe" class="download-confirmation">Descargar</a></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="table-wrapper gm-table-wrapper">
+            <button type="button" class="toggle-gm-table" aria-expanded="false">Software para instalación GM</button>
+            <table class="download-table gm-download-table" aria-hidden="true">
+                <tr>    
+                    <td>Exlusivo Soporte TI</td>                
                     <td>Instalador GM</td>
                     <td><a href="#" class="download-link" data-url="https://drive.google.com/file/d/1pZJuIOPLrFjSDBUk3sbmPyqmaGo-7tTc/view?usp=sharing">Descargar</a></td>
                 </tr>
-                <tr>
-                    <td>RustDesk</td>
-                    <td><a href="https://github.com/User-Craw/Utilerias-GM/releases/download/v1.0.0/RustDesk.exe">Descargar</a></td>
-                </tr>
-                <tr>
-                    <td>AnyDesk</td>
-                    <td><a href="https://github.com/User-Craw/Utilerias-GM/releases/download/v1.0.0/AnyDesk.exe">Descargar</a></td>
-                </tr>
             </table>
+        </div>
+    </div>
+
+    <div id="download-modal" class="download-modal" aria-hidden="true">
+        <div class="download-modal-content">
+            <p>La descarga comenzará en breve. Una vez completada, ejecute el archivo descargado para iniciar la instalación del programa. Al finalizar la instalación, proporcione el <strong>ID de conexión(RustDesk) o Puesto de Trabajo(AnyDesk) al área de soporte</strong></p>
+            <button type="button" id="confirm-download">Entendido</button>
+        </div>
+    </div>
+
+    <div id="password-modal" class="download-modal" aria-hidden="true">
+        <div class="password-modal-content">
+            <h2>Contraseña requerida</h2>
+            <label for="download-password">Ingrese la contraseña para continuar:</label>
+            <input id="download-password" type="password" autocomplete="off" spellcheck="false">
+            <div class="password-actions">
+                <button type="button" class="secondary-btn" id="cancel-password">Cancelar</button>
+                <button type="button" id="accept-password">Aceptar</button>
+            </div>
         </div>
     </div>
 
