@@ -7,10 +7,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const gmTable = document.querySelector('.gm-download-table');
     const passwordModal = document.getElementById('password-modal');
     const passwordInput = document.getElementById('download-password');
+    const passwordError = document.getElementById('password-error');
     const acceptPasswordButton = document.getElementById('accept-password');
     const cancelPasswordButton = document.getElementById('cancel-password');
     const correctPassword = 'ganamas0123';
     let pendingDownloadUrl = '';
+
+    const clearPasswordError = () => {
+        if (!passwordError) return;
+        passwordError.hidden = true;
+        passwordError.textContent = 'Contraseña incorrecta';
+        passwordInput.setAttribute('aria-invalid', 'false');
+    };
 
     if (link) {
         link.addEventListener('click', (event) => {
@@ -27,6 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
         passwordModal.classList.remove('show');
         passwordModal.setAttribute('aria-hidden', 'true');
         passwordInput.value = '';
+        clearPasswordError();
     };
 
     if (acceptPasswordButton) {
@@ -35,7 +44,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 closePasswordModal();
                 window.location.href = pendingDownloadUrl;
             } else {
-                alert('Contraseña incorrecta');
+                if (passwordError) {
+                    passwordError.hidden = false;
+                    passwordError.textContent = 'Contraseña incorrecta';
+                }
+                passwordInput.setAttribute('aria-invalid', 'true');
                 passwordInput.value = '';
                 passwordInput.focus();
             }
@@ -51,6 +64,10 @@ document.addEventListener('DOMContentLoaded', () => {
             if (event.target === passwordModal) {
                 closePasswordModal();
             }
+        });
+
+        passwordInput.addEventListener('input', () => {
+            clearPasswordError();
         });
 
         passwordInput.addEventListener('keydown', (event) => {

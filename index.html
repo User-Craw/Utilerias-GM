@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pagina de descargas</title>
+    <link rel="icon" type="image/png" sizes="150x150" href="https://ganamas.net/wp-content/uploads/2025/11/isotipo-GanaMas-1_1-150x150.png">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,6 +13,17 @@
         <h1>Descarga de Software</h1>
 
         <div class="table-wrapper">
+            <a href="https://ganamas.net/#" class="visit-badge" aria-label="Visita nuestra página oficial" target="_blank" rel="noopener noreferrer">
+                <svg class="visit-ring" viewBox="0 0 200 200" aria-hidden="true">
+                    <defs>
+                        <path id="visitTextPath" d="M 100,100 m -78,0 a 78,78 0 1,1 156,0 a 78,78 0 1,1 -156,0"/>
+                    </defs>
+                    <text class="visit-text">
+                        <textPath href="#visitTextPath" startOffset="0" textLength="900">Visita nuestra página oficial • Visita nuestra página oficial •</textPath>
+                    </text>
+                </svg>
+                <img class="visit-center" src="https://ganamas.net/wp-content/uploads/2025/11/isotipo-GanaMas-1_1-150x150.png" alt="Logo GanaMas">
+            </a>
             <table class="download-table">
                 <tr>
                     <th colspan="2">Herramientas de Acceso Remoto para Clientes GanaMás</th>
@@ -60,7 +72,8 @@
         <div class="password-modal-content">
             <h2>Contraseña requerida</h2>
             <label for="download-password">Ingrese la contraseña para continuar:</label>
-            <input id="download-password" type="password" autocomplete="off" spellcheck="false">
+            <input id="download-password" type="password" autocomplete="off" spellcheck="false" aria-invalid="false">
+            <div id="password-error" class="password-error" role="alert" aria-live="polite" hidden>Contraseña incorrecta</div>
             <div class="password-actions">
                 <button type="button" class="secondary-btn" id="cancel-password">Cancelar</button>
                 <button type="button" id="accept-password">Aceptar</button>
