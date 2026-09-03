@@ -10,7 +10,7 @@
 <body>
     <div class="frame">
         <img class="header-logo" src="https://ganamas.net/wp-content/uploads/2025/11/logotipo-con-tagline-horizontal-3.png" alt="Logo Ganamas">
-        <h1>Descarga de Software</h1>
+        <h1>Bienvenido al Centro de Soporte TI</h1>
 
         <div class="table-wrapper">
             <a href="https://ganamas.net/#" class="visit-badge" aria-label="Visita nuestra página oficial" target="_blank" rel="noopener noreferrer">
@@ -26,7 +26,12 @@
             </a>
             <table class="download-table">
                 <tr>
-                    <th colspan="2">Herramientas de Acceso Remoto para Clientes GanaMás</th>
+                    <th colspan="3">Descarga la herramienta de acceso remoto indicada por nuestro personal de Soporte.</th>
+                </tr>
+                <tr>
+                    <th>Programa</th>
+                    <th>Descripción</th>
+                    <th></th>
                 </tr>
                 <tr>
                     <td class="program-cell">
@@ -35,6 +40,7 @@
                             <span class="program-name">RustDesk</span>
                         </div>
                     </td>
+                    <td><span class="star-highlight" aria-hidden="true">⭐</span> Acceso remoto principal para brindar soporte técnico.</td>
                     <td><a href="https://github.com/User-Craw/Utilerias-GM/releases/download/v1.0.0/RustDesk.exe" class="download-confirmation">Descargar</a></td>
                 </tr>
                 <tr>
@@ -44,7 +50,18 @@
                             <span class="program-name">AnyDesk</span>
                         </div>
                     </td>
+                    <td>Alternativa de acceso remoto para soporte técnico.</td>
                     <td><a href="https://github.com/User-Craw/Utilerias-GM/releases/download/v1.0.0/AnyDesk.exe" class="download-confirmation">Descargar</a></td>
+                </tr>
+                <tr>
+                    <td class="program-cell">
+                        <div class="program-name-wrap">
+                            <img src="GanaMas_Ico.ico" alt="Actualizador GanaMás" class="program-icon">
+                            <span class="program-name">Actualizador</span>
+                        </div>
+                    </td>
+                    <td>Herramienta para mantener actualizado el Punto de Venta GanaMás.</td>
+                    <td><a href="https://publicidadgm.blob.core.windows.net/ganamassetup/ActualizadorGM.exe" class="download-confirmation" data-download-type="updater">Descargar</a></td>
                 </tr>
             </table>
         </div>
@@ -53,7 +70,7 @@
             <button type="button" class="toggle-gm-table" aria-expanded="false">Software para instalación GM</button>
             <table class="download-table gm-download-table" aria-hidden="true">
                 <tr>    
-                    <td>Exlusivo Soporte TI</td>                
+                    <td>Exlusivo Para Soporte TI</td>                
                     <td>Instalador GM</td>
                     <td><a href="#" class="download-link" data-url="https://drive.google.com/file/d/1pZJuIOPLrFjSDBUk3sbmPyqmaGo-7tTc/view?usp=sharing">Descargar</a></td>
                 </tr>
@@ -63,7 +80,8 @@
 
     <div id="download-modal" class="download-modal" aria-hidden="true">
         <div class="download-modal-content">
-            <p>La descarga comenzará en breve. Una vez completada, ejecute el archivo descargado para iniciar la instalación del programa. Al finalizar la instalación, proporcione el <strong>ID de conexión(RustDesk) o Puesto de Trabajo(AnyDesk) al área de soporte</strong></p>
+            <p id="standard-download-message">La descarga comenzará en breve. Una vez completada, ejecute el archivo descargado para iniciar la instalación del programa. Al finalizar la instalación, proporcione el <strong>ID de conexión (RustDesk) o Puesto de Trabajo (AnyDesk) al área de soporte</strong></p>
+            <p id="updater-download-message" hidden><strong>ADVERTENCIA:</strong> La actualización del Punto de Venta debe ser realizada únicamente por personal autorizado de GanaMás. No intente realizar la actualización por cuenta propia, ya que una instalación o configuración incorrecta podría ocasionar daños al sistema, pérdida de información o daños irreversibles.<br><br>Descargue el actualizador únicamente cuando el personal de Soporte TI se lo indique y siga sus instrucciones durante todo el proceso.</p>
             <button type="button" id="confirm-download">Entendido</button>
         </div>
     </div>

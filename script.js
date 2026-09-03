@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const link = document.querySelector('.download-link');
     const confirmationLinks = document.querySelectorAll('.download-confirmation');
     const modal = document.getElementById('download-modal');
+    const standardDownloadMessage = document.getElementById('standard-download-message');
+    const updaterDownloadMessage = document.getElementById('updater-download-message');
     const confirmButton = document.getElementById('confirm-download');
     const gmToggle = document.querySelector('.toggle-gm-table');
     const gmTable = document.querySelector('.gm-download-table');
@@ -91,6 +93,9 @@ document.addEventListener('DOMContentLoaded', () => {
             downloadLink.addEventListener('click', (event) => {
                 event.preventDefault();
                 pendingDownloadUrl = downloadLink.href;
+                const isUpdater = downloadLink.dataset.downloadType === 'updater';
+                standardDownloadMessage.hidden = isUpdater;
+                updaterDownloadMessage.hidden = !isUpdater;
                 modal.classList.add('show');
                 modal.setAttribute('aria-hidden', 'false');
             });

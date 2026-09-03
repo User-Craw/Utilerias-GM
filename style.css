@@ -5,7 +5,7 @@
 html, body {
     margin: 0;
     min-height: 100%;
-    height: 100%;
+    height: auto;
     font-family: Arial, sans-serif;
     background: #EEFFFA;
 }
@@ -13,8 +13,10 @@ html, body {
 body {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    min-height: 100vh;
     padding: 20px;
+    overflow-x: hidden;
 }
 
 .frame {
@@ -23,6 +25,7 @@ body {
     align-items: center;
     width: min(96vw, 1200px);
     min-height: calc(100vh - 40px);
+    height: auto;
     background: radial-gradient(circle at center, #04BA78 0%, #124A49 70%);
     border: 4px solid transparent;
     border-radius: 12px;
@@ -34,12 +37,12 @@ h1 {
     margin: 0;
     text-align: center;
     color: #F8FFDE;
-    font-size: clamp(1.6rem, 2.8vw, 2.4rem);
+    font-size: clamp(1.4rem, 2.4vw, 2rem);
 }
 
 .header-logo {
     display: block;
-    width: min(60vw, 420px);
+    width: min(52vw, 360px);
     max-width: 100%;
     height: auto;
     margin: 0 auto 16px;
@@ -186,14 +189,16 @@ h1 {
 
 .program-cell {
     text-align: center;
+    width: 30%;
 }
 
 .program-name-wrap {
-    display: inline-flex;
+    display: grid;
+    grid-template-columns: 32px minmax(0, 1fr);
     align-items: center;
-    justify-content: center;
+    width: 100%;
     gap: 10px;
-    text-align: center;
+    text-align: left;
 }
 
 .program-icon {
@@ -201,7 +206,7 @@ h1 {
     height: 30px;
     object-fit: contain;
     display: block;
-    margin-right: 2px;
+    margin: 0 auto;
 }
 
 .anydesk-icon {
@@ -213,14 +218,37 @@ h1 {
     display: inline-block;
 }
 
+.star-highlight {
+    display: inline-block;
+    animation: starPulse 1.2s ease-in-out infinite;
+    transform-origin: center;
+}
+
+@keyframes starPulse {
+    0%, 100% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 1px #FFCE34);
+    }
+    50% {
+        transform: scale(1.3);
+        filter: drop-shadow(0 0 7px #FFCE34);
+    }
+}
+
 .download-table th:nth-child(2),
 .download-table td:nth-child(2) {
     border-left: none;
+    border-right: none;
 }
 
 .download-table th:nth-child(1),
 .download-table td:nth-child(1) {
     border-right: none;
+}
+
+.download-table th:nth-child(3),
+.download-table td:nth-child(3) {
+    border-left: none;
 }
 
 .download-table th {
@@ -370,6 +398,31 @@ h1 {
 }
 
 @media (max-width: 700px) {
+    body {
+        padding: 10px;
+    }
+
+    .frame {
+        width: 100%;
+        padding: 16px 10px;
+    }
+
+    .visit-badge {
+        width: 100px;
+        height: 100px;
+        right: 12px;
+        bottom: 12px;
+    }
+
+    .visit-text {
+        font-size: 16px;
+    }
+
+    .visit-center {
+        width: 52px;
+        height: 52px;
+    }
+
     .download-table th,
     .download-table td {
         padding: 12px 8px;
