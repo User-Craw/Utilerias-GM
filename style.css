@@ -48,6 +48,41 @@ h1 {
     margin: 0 auto 16px;
 }
 
+.support-table-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.support-table {
+    width: min(90%, 760px);
+    border-collapse: collapse;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(248, 255, 222, 0.4);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+.support-table th,
+.support-table td {
+    border: 1px solid rgba(248, 255, 222, 0.4);
+    padding: 16px 18px;
+    text-align: center;
+    color: #F8FFDE;
+    font-size: 1rem;
+}
+
+.support-table thead th {
+    background: rgba(255, 255, 255, 0.12);
+    font-size: 1.06rem;
+}
+
+.support-table tbody tr:nth-child(even) {
+    background: rgba(255, 255, 255, 0.04);
+}
+
 .table-wrapper {
     margin-top: 30px;
     width: 100%;

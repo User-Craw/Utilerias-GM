@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const link = document.querySelector('.download-link');
+    const downloadLinks = document.querySelectorAll('.download-link');
     const confirmationLinks = document.querySelectorAll('.download-confirmation');
     const modal = document.getElementById('download-modal');
     const standardDownloadMessage = document.getElementById('standard-download-message');
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
         passwordInput.setAttribute('aria-invalid', 'false');
     };
 
-    if (link) {
+    downloadLinks.forEach((link) => {
         link.addEventListener('click', (event) => {
             event.preventDefault();
             pendingDownloadUrl = link.dataset.url;
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
             passwordModal.setAttribute('aria-hidden', 'false');
             passwordInput.focus();
         });
-    }
+    });
 
     const closePasswordModal = () => {
         passwordModal.classList.remove('show');
