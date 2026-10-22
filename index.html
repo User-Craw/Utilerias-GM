@@ -75,14 +75,17 @@
                     <td><a href="#" class="download-link" data-url="https://drive.google.com/file/d/1pZJuIOPLrFjSDBUk3sbmPyqmaGo-7tTc/view?usp=sharing">Descargar</a></td>
                 </tr>
                 <tr>
-                    <td>Herramienta</td>
-                    <td>Crystal Reports</td>
-                    <td><a href="https://github.com/User-Craw/Utilerias-GM/releases/download/v1/AutoInstallCrystal.exe">Descargar</a></td>
-                </tr>
-                <tr>
-                    <td>Herramienta</td>
-                    <td>Report Viewer</td>
-                    <td><a href="https://github.com/User-Craw/Utilerias-GM/releases/download/v1/AutoInstallRepServ.exe">Descargar</a></td>
+                    <td>Herramientas</td>
+                    <td>
+                        <select class="tool-select" id="gm-tool-select" aria-label="Selecciona la herramienta">
+                            <option value="">-</option>
+                            <option value="https://github.com/User-Craw/Utilerias-GM/releases/download/v1/AutoInstallCrystal.exe">Crystal Reports</option>
+                            <option value="https://github.com/User-Craw/Utilerias-GM/releases/download/v1/AutoInstallRepServ.exe">Report Viewer</option>
+                            <option value="https://github.com/User-Craw/Utilerias-GM/releases/download/v1/AutoInstallCR-RV-SQL.exe">CrystalR+RepViewer+SQLSysClr</option>
+                        </select>
+                        <span class="tool-select-error" id="gm-tool-select-error" role="alert" aria-live="polite" hidden>selecciona una de las opciones disponibles</span>
+                    </td>
+                    <td><a class="tool-download-link" href="#">Descargar</a></td>
                 </tr>
             </table>
         </div>

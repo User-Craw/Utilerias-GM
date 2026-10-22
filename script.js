@@ -7,6 +7,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const confirmButton = document.getElementById('confirm-download');
     const gmToggle = document.querySelector('.toggle-gm-table');
     const gmTable = document.querySelector('.gm-download-table');
+    const toolSelect = document.getElementById('gm-tool-select');
+    const toolDownloadLink = document.querySelector('.tool-download-link');
+    const toolSelectError = document.getElementById('gm-tool-select-error');
     const passwordModal = document.getElementById('password-modal');
     const passwordInput = document.getElementById('download-password');
     const passwordError = document.getElementById('password-error');
@@ -85,6 +88,22 @@ document.addEventListener('DOMContentLoaded', () => {
             const isOpen = gmTable.classList.toggle('show');
             gmTable.setAttribute('aria-hidden', String(!isOpen));
             gmToggle.setAttribute('aria-expanded', String(isOpen));
+        });
+    }
+
+    if (toolSelect && toolDownloadLink) {
+        toolSelect.addEventListener('change', () => {
+            const selectedUrl = toolSelect.value;
+            toolDownloadLink.href = selectedUrl || '#';
+            toolSelectError.hidden = Boolean(selectedUrl);
+        });
+
+        toolDownloadLink.addEventListener('click', (event) => {
+            if (!toolSelect.value) {
+                event.preventDefault();
+                toolSelectError.hidden = false;
+                toolSelect.focus();
+            }
         });
     }
 

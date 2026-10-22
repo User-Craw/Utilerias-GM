@@ -295,6 +295,33 @@ h1 {
     min-height: 80px;
 }
 
+.tool-select {
+    width: 100%;
+    max-width: 100%;
+    padding: 9px 10px;
+    border: 1px solid rgba(248, 255, 222, 0.45);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.12);
+    color: #F8FFDE;
+    font: inherit;
+}
+
+.tool-select option {
+    background: #124A49;
+    color: #F8FFDE;
+}
+
+.tool-select-error {
+    display: block;
+    margin-top: 6px;
+    color: #ffcfb8;
+    font-size: 0.85rem;
+}
+
+.tool-select-error[hidden] {
+    display: none;
+}
+
 .download-table a {
     color: #F8FFDE;
     text-decoration: none;
